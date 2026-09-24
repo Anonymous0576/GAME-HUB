@@ -1,0 +1,612 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GameHub — Play Free Games Online</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="brand">
+        <span class="brand-icon">??</span>
+        GameHub
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#popular">Popular</a>
+        <a href="#new">New</a>
+    </nav>
+
+    <div class="nav-right">
+
+        <button id="themeButton" class="icon-btn">
+            ??
+        </button>
+
+        <button id="favoriteButton" class="icon-btn">
+            ??
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">
+            ?? PLAY NOW
+        </span>
+
+        <h1>
+            Free games.<br>
+            <span>Instant fun.</span>
+        </h1>
+
+        <p>
+            Play thousands of browser games instantly.
+            No downloads. No installation. Just play.
+        </p>
+
+        <a href="#games" class="hero-button">
+            Explore Games ?
+        </a>
+
+    </div>
+
+    <div class="hero-art">
+
+        <div class="floating-game game-a">??</div>
+        <div class="floating-game game-b">???</div>
+        <div class="floating-game game-c">??</div>
+        <div class="floating-game game-d">??</div>
+
+        <div class="hero-controller">
+            ??
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search-section">
+
+    <div class="search">
+
+        <span>??</span>
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="Search games..."
+        >
+
+        <kbd>CTRL + K</kbd>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="categories-section">
+
+    <div class="container">
+
+        <h2>Browse Categories</h2>
+
+        <div class="categories">
+
+            <button class="category active" data-category="all">
+                ?? All Games
+            </button>
+
+            <button class="category" data-category="action">
+                ?? Action
+            </button>
+
+            <button class="category" data-category="racing">
+                ??? Racing
+            </button>
+
+            <button class="category" data-category="puzzle">
+                ?? Puzzle
+            </button>
+
+            <button class="category" data-category="arcade">
+                ?? Arcade
+            </button>
+
+            <button class="category" data-category="sports">
+                ? Sports
+            </button>
+
+            <button class="category" data-category="strategy">
+                ?? Strategy
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+    <!-- FEATURED -->
+
+    <section class="game-section">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="small-title">EDITOR'S PICK</span>
+                <h2>Featured Games</h2>
+            </div>
+
+            <button class="view-all">
+                View all ?
+            </button>
+
+        </div>
+
+
+        <div class="featured-grid">
+
+            <article class="featured-card large"
+                     data-game="space">
+
+                <div class="game-cover space-cover">
+
+                    <span class="cover-icon">??</span>
+
+                    <span class="badge">HOT</span>
+
+                </div>
+
+                <div class="game-details">
+
+                    <div>
+                        <h3>Galaxy Defender</h3>
+                        <p>Arcade • Action</p>
+                    </div>
+
+                    <button
+                        class="play-button"
+                        onclick="openGame('space')">
+                        PLAY
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <article class="featured-card"
+                     data-game="racing">
+
+                <div class="game-cover racing-cover">
+
+                    <span class="cover-icon">???</span>
+
+                </div>
+
+                <div class="game-details">
+
+                    <div>
+                        <h3>Neon Racer</h3>
+                        <p>Racing • Arcade</p>
+                    </div>
+
+                    <button
+                        class="play-button"
+                        onclick="openGame('racing')">
+                        PLAY
+                    </button>
+
+                </div>
+
+            </article>
+
+
+            <article class="featured-card"
+                     data-game="puzzle">
+
+                <div class="game-cover puzzle-cover">
+
+                    <span class="cover-icon">??</span>
+
+                </div>
+
+                <div class="game-details">
+
+                    <div>
+                        <h3>Block Puzzle</h3>
+                        <p>Puzzle • Casual</p>
+                    </div>
+
+                    <button
+                        class="play-button"
+                        onclick="openGame('puzzle')">
+                        PLAY
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- POPULAR -->
+
+    <section class="game-section" id="popular">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="small-title">MOST PLAYED</span>
+                <h2>Popular Games</h2>
+            </div>
+
+        </div>
+
+
+        <div class="games-grid" id="gamesGrid">
+
+
+            <article class="game-card"
+                     data-category="arcade"
+                     data-name="snake">
+
+                <div class="card-image snake">
+                    ??
+                    <span class="favorite">?</span>
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Snake Classic</h3>
+
+                    <p>Arcade</p>
+
+                    <div class="game-bottom">
+
+                        <span>? 4.8</span>
+
+                        <button
+                            onclick="openGame('snake')">
+                            Play
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="game-card"
+                     data-category="action"
+                     data-name="space shooter">
+
+                <div class="card-image shooter">
+                    ??
+                    <span class="favorite">?</span>
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Space Blaster</h3>
+
+                    <p>Action</p>
+
+                    <div class="game-bottom">
+
+                        <span>? 4.7</span>
+
+                        <button
+                            onclick="openGame('space')">
+                            Play
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="game-card"
+                     data-category="racing"
+                     data-name="neon racer">
+
+                <div class="card-image racing">
+                    ???
+                    <span class="favorite">?</span>
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Neon Racer</h3>
+
+                    <p>Racing</p>
+
+                    <div class="game-bottom">
+
+                        <span>? 4.6</span>
+
+                        <button
+                            onclick="openGame('racing')">
+                            Play
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="game-card"
+                     data-category="puzzle"
+                     data-name="memory">
+
+                <div class="card-image memory">
+                    ??
+                    <span class="favorite">?</span>
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Memory Master</h3>
+
+                    <p>Puzzle</p>
+
+                    <div class="game-bottom">
+
+                        <span>? 4.9</span>
+
+                        <button
+                            onclick="openGame('memory')">
+                            Play
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="game-card"
+                     data-category="strategy"
+                     data-name="chess">
+
+                <div class="card-image chess">
+                    ??
+                    <span class="favorite">?</span>
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Mini Chess</h3>
+
+                    <p>Strategy</p>
+
+                    <div class="game-bottom">
+
+                        <span>? 4.8</span>
+
+                        <button
+                            onclick="openGame('chess')">
+                            Play
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="game-card"
+                     data-category="arcade"
+                     data-name="flappy bird">
+
+                <div class="card-image bird">
+                    ??
+                    <span class="favorite">?</span>
+                </div>
+
+                <div class="card-content">
+
+                    <h3>Flappy Bird</h3>
+
+                    <p>Arcade</p>
+
+                    <div class="game-bottom">
+
+                        <span>? 4.5</span>
+
+                        <button
+                            onclick="openGame('bird')">
+                            Play
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- NEW GAMES -->
+
+    <section class="game-section" id="new">
+
+        <div class="section-heading">
+
+            <div>
+                <span class="small-title">JUST ARRIVED</span>
+                <h2>New Games</h2>
+            </div>
+
+        </div>
+
+        <div class="new-game-banner">
+
+            <div>
+
+                <span>? NEW THIS WEEK</span>
+
+                <h2>Discover something new.</h2>
+
+                <p>
+                    Fresh games are added regularly.
+                    Come back and find your next favorite.
+                </p>
+
+            </div>
+
+            <div class="banner-icon">
+                ??
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- ================= GAME PLAYER ================= -->
+
+<div id="gameModal" class="game-modal">
+
+    <div class="game-window">
+
+        <div class="game-topbar">
+
+            <div>
+
+                <strong id="gameTitle">
+                    Game
+                </strong>
+
+                <span id="gameDescription">
+                    Playing now
+                </span>
+
+            </div>
+
+            <div class="game-controls">
+
+                <button onclick="restartGame()">
+                    ?
+                </button>
+
+                <button onclick="fullscreenGame()">
+                    ?
+                </button>
+
+                <button
+                    class="close"
+                    onclick="closeGame()">
+                    ?
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div id="gameContainer">
+
+            <div class="game-start-screen">
+
+                <div class="big-game-icon">
+                    ??
+                </div>
+
+                <h2>Ready to Play?</h2>
+
+                <p>
+                    Your game will load here.
+                </p>
+
+                <button onclick="launchSelectedGame()">
+                    START GAME
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        ?? GameHub
+    </div>
+
+    <p>
+        Play free browser games instantly.
+    </p>
+
+    <div class="footer-links">
+
+        <a href="#">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Contact</a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 GameHub
+    </p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
